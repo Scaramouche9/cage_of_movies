@@ -1,4 +1,3 @@
-
 // calls needed modules
 const http = require('http'),
   fs = require('fs'),
@@ -7,7 +6,7 @@ const http = require('http'),
 http.createServer((request, response) => {
   let addr = request.url,
     q = url.parse(addr, true);
-  // filePath?
+    filePath = '';
 
   fs.appendFile('log.txt', 'URL: ' + addr + '\n Timestamp: ' + new Date() + '\n\n', (err) => {
     if (err) {
@@ -22,9 +21,18 @@ http.createServer((request, response) => {
   } else {
     filePath = 'index.html';
   }
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      throw err;
+    }
   
-  response.writeHead(200, {
+    response.writeHead(200, {
     'Content-Type': 'text/plain'
-  });
+    });
+    response.write(data);
+    response.end();
+  })
 }).listen(8080);
+console.log('My test server is running on Port 8080.');
 
