@@ -28,7 +28,7 @@ http.createServer((request, response) => {
     }
   
     response.writeHead(200, {
-    'Content-Type': 'text/plain'
+    'Content-Type': 'text/html'
     });
     response.write(data);
     response.end();
