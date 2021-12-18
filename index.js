@@ -1,8 +1,9 @@
-// Using the Express routing syntax, create an express GET route located at the endpoint "/movies" that returns a JSON object containing data about your top 10 movies
-
+// importing express and morgan
 const express = require('express');
+// defines variable to call on express
 const app = express();
 
+// invokes use of morgan middleware to log url requests
 let topMovies = [
   {
     title: 'Pig',
@@ -78,6 +79,7 @@ app.get('/', (req, res) => {
 // serves documentation.html from "public" folder
 app.use(express.static('public'));
 
+// handles errors
 // listen for requests
 app.listen(8080, () => {
   console.log('Your app is listening on port 8080.');
