@@ -12,61 +12,61 @@ let topMovies = [
   {
     title: 'Pig',
     director: 'Michael Sarnoski',
-    genre: 'Drama',
+    genre: 'Drama, Thriller',
     year: '2021'
   },
   {
     title: 'Willy\s Wonderland',
     director: 'Kevin Lewis',
-    genre: 'Action',
+    genre: 'Action, Comedy, Horror, Thriller',
     year: '2021'
   },
   {
     title: 'Prisoners of the Ghostland',
     director: 'Sion Sono',
-    genre: 'Action',
+    genre: 'Action, Sci-Fi, Thriller',
     year: '2021'
   },
   {
     title: 'Kick-Ass',
     director: 'Matthew Vaughn',
-    genre: 'Action',
+    genre: 'Action, Comedy, Crime',
     year: '2010'
   },
   {
     title: 'The Wicker Man',
     director: 'Neil LaBute',
-    genre: 'Horror',
+    genre: 'Horror, Mystery, Thriller',
     year: '2016'
   },
   {
     title: 'The Weather Man',
     director: 'Gore Verbinski',
-    genre: 'Drama',
+    genre: 'Comedy, Drama',
     year: '2005'
   },,
   {
     title: 'National Treasure',
     director: 'Jon Turtletaub',
-    genre: 'Adventure',
+    genre: 'Action, Adventure, Mystery, Thriller',
     year: '2004'
   },
   {
     title: 'Matchstick Men',
     director: 'Ridley Scott',
-    genre: 'Crime',
+    genre: 'Comedy, Crime, Drama, Thriller',
     year: '2003'
   },
   {
     title: 'Wild at Heart',
     director: 'David Lynch',
-    genre: 'Drama',
+    genre: 'Comedy, Crime, Drama, Thriller',
     year: '1990'
   },
   {
     title: 'Raising Arizona',
-    director: 'Joel Coen',
-    genre: 'Comedy',
+    director: 'Joel Coen, Ethan Coen',
+    genre: 'Comedy, Crime',
     year: '1987'
   }
 ];
