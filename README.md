@@ -1,2 +1,3 @@
 # movie_api
-Look up movies and choose your favorites to add to your profile!
+
+Look up Nicolas Cage movies and choose your favorites to add to your profile!
