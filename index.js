@@ -84,6 +84,11 @@ app.get('/', (req, res) => {
 app.use(express.static('public'));
 
 // handles errors
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('"It isn\'t lying! You just tell them what you did right, and you leave out the rest!" ...Okay, something went wrong though, bear with us');
+})
+
 // listen for requests
 app.listen(8080, () => {
   console.log('Your app is listening on port 8080.');
