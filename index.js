@@ -1,9 +1,13 @@
 // importing express and morgan
 const express = require('express');
+  const morgan = require('morgan');
+  
 // defines variable to call on express
 const app = express();
 
 // invokes use of morgan middleware to log url requests
+app.use(morgan('common'));
+
 let topMovies = [
   {
     title: 'Pig',
