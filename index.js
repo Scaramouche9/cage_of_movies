@@ -65,3 +65,20 @@ let topMovies = [
     year: '1987'
   }
 ];
+
+// GET requests
+app.get('/movies', (req, res) => {
+  res.json(topMovies);
+});
+
+app.get('/', (req, res) => {
+  res.send('Find your favorite Nicolas Cage movies here!');
+});
+
+// serves documentation.html from "public" folder
+app.use(express.static('public'));
+
+// listen for requests
+app.listen(8080, () => {
+  console.log('Your app is listening on port 8080.');
+});
