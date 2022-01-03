@@ -17,5 +17,163 @@
         <li>Add personal info and create a list of their favorite Nicolas Cage movies by adding or removing selections</li>
         <li>Access the app and their profile from any device</li>
       </ul>
+
+    <!-- write a list of URL endpoints, request, and response methods for each listed operation-->
+    <h2>Endpoints</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Business Logic</th>
+            <th>Endpoint URL</th>
+            <th>HTTP Method</th>
+            <th>Query Parameters</th>
+            <th>Request Body Data Format</th>
+            <th>Response Body Data Format</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Return a list of ALL movies to the user</td>
+            <td>/movies</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>None</td>
+            <td>A JSON object holding data about all the movies</td>
+          </tr>
+          <tr>
+            <td>Return data (description, genre, director, image URL, year) about a single movie by title to the user</td>
+            <td>/movies/:title</td>
+            <td>GET</td>
+            <td>:title</td>
+            <td>None</td>
+            <td>
+              A JSON object holding data about the selected movie, structured like:
+              {
+                title: 'National Treasure'
+                genre: ['action', 'adventure', 'mystery', 'thriller']
+                director: 'Jon Turteltaub'
+                image URL: 'placholder.com/200'
+                year: '2004'
+              }
+            </td>
+          </tr>
+          <tr>
+            <td>Return data about a genre by name</td>
+            <td>/movies/genre/:genre</td>
+            <td>GET</td>
+            <td>:genre</td>
+            <td>None</td>
+            <td>
+              A JSON object holding data about the selected movie's genres, structured like:
+              {
+                title: 'National Treasue',
+                director: 'Jon Turteltaub',
+                genres: 'Action, Adventure, Mystery, Thriller'
+                year: '2004'
+              }
+              {
+                title: 'The Weather Man',
+                director: 'Gore Verbinski',
+                genres: 'Comedy, Drama',
+                year: 2005
+              }
+            </td>
+          </tr>
+          <tr>
+            <td>Return data about a director (bio, brith year, death year) by name</td>
+            <td>/movies/director/:director</td>
+            <td>GET</td>
+            <td>:director</td>
+            <td>None</td>
+            <td>
+              A JSON object holding data about the selected director, structured like:
+              {
+                name: 'Jon Turteltaub'
+                bio: 'Here are some facts about Jon Turteltaub.'
+                birth year: '1963'
+                death year: 'NA'
+              }
+            </td>
+          </tr>
+          <tr>
+            <td>Allow users to register</td>
+            <td>/users/:newUser</td>
+            <td>POST</td>
+            <td>:newUser</td>
+            <td>
+              A JSON object holding data about the user, structured like:
+              {
+                username: "BenGates"
+                email: "bgates@gmail.com"
+                password: "Trea$ureHunter64"
+                Date of Birth: 01/07/1964
+              }
+            </td>
+            <td>
+              A text string:
+              {
+                "You've successfully registered, welcome!"
+              }
+            </td>
+          </tr>
+          <tr>
+            <td>Allow users to update their info</td>
+            <td>/users/:username</td>
+            <td>PUT</td>
+            <td>:username</td>
+            <td>None</td>
+            <td>
+              A text string:
+              {
+                "You've successfully updated your information!"
+              }
+            </td>
+          </tr>
+          <tr>
+            <td>Allow users to add a movie to their list of favorites, showing text that a movie has been added</td>
+            <td>users/favorites/:title</td>
+            <td>POST</td>
+            <td>:title</td>
+            <td>
+              A JSON object holding a movie title, structured like:
+              {
+                "National Treasure"
+              }
+            </td>
+            <td>A text string:
+              {
+                "You've added a new movie to your favorites!"
+              } 
+            </td>
+          </tr>
+          <tr>
+            <td>Allow users to remove a movie from their list of favorites, showing a text that a movie has been removed</td>
+            <td>users/favorites/:title</td>
+            <td>DELETE</td>
+            <td>:title</td>
+            <td>None</td>
+            <td>
+              A text string:
+              {
+                "You've successfully deleted a movie from your favorites"
+              }
+              </td>
+          </tr>
+          <tr>
+            <td>Allow existing users to deregister, showing a text that a user email has been removed</td>
+            <td>/users/:username</td>
+            <td>DELETE</td>
+            <td>:username</td>
+            <td>None</td>
+            <td>
+              A text string:
+              {
+                "User account deleted, sorry to see you go!"
+              }
+            </td>
+          </tr>
+        </tbody>
+      </table>
   </body>
+
 </html>
