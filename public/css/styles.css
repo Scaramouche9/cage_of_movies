@@ -1,5 +1,7 @@
 table {
   border-style: double;
+  table-layout: fixed;
+  width: 100%;
 }
 
 th {
@@ -8,5 +10,6 @@ th {
 
 td {
   border-bottom: solid;
-  border-right: solid;;
+  border-right: solid;
+  width: 20%;
 }
