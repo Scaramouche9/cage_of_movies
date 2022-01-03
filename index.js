@@ -80,7 +80,7 @@ let topMovies = [
     },
     genres: 'Comedy, Drama',
     year: '2005'
-  },,
+  },
   {
     title: 'National Treasure',
     director: {
