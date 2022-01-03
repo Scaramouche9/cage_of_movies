@@ -17,62 +17,112 @@ app.use(bodyParser.json());
 let topMovies = [
   {
     title: 'Pig',
-    director: 'Michael Sarnoski',
-    genre: 'Drama, Thriller',
+    director: {
+      name: 'Michael Sarnoski',
+      bio: 'This is a bio',
+      birth: '1900',
+      death: 'NA'
+    },
+    genres: 'Drama, Thriller',
     year: '2021'
   },
   {
     title: 'Willy\s Wonderland',
-    director: 'Kevin Lewis',
-    genre: 'Action, Comedy, Horror, Thriller',
+    director:   {
+      name: 'Kevin Lewis',
+      bio: 'This is also a bio',
+      birth: '1980',
+      death: 'NA'
+    },
+    genres: 'Action, Comedy, Horror, Thriller',
     year: '2021'
   },
   {
     title: 'Prisoners of the Ghostland',
-    director: 'Sion Sono',
-    genre: 'Action, Sci-Fi, Thriller',
+    director:   {
+      name: 'Sion Sono',
+      bio: 'This too, is a bio',
+      birth: '1930',
+      death: 'NA'
+    },
+    genres: 'Action, Sci-Fi, Thriller',
     year: '2021'
   },
   {
     title: 'Kick-Ass',
-    director: 'Matthew Vaughn',
-    genre: 'Action, Comedy, Crime',
+    director: {
+      name: 'Matthew Vaughn',
+      bio: 'here',
+      birth: '1919',
+      death: 'NA'
+    },
+    genres: 'Action, Comedy, Crime',
     year: '2010'
   },
   {
     title: 'The Wicker Man',
-    director: 'Neil LaBute',
-    genre: 'Horror, Mystery, Thriller',
+    director: {
+      name: 'Neil LaBute',
+      bio: 'this',
+      birth: '1680',
+      death: 'NA'
+    },
+    genres: 'Horror, Mystery, Thriller',
     year: '2016'
   },
   {
     title: 'The Weather Man',
-    director: 'Gore Verbinski',
-    genre: 'Comedy, Drama',
+    director: {
+      name: 'Gore Verbinski',
+      bio: 'something',
+      birth: '1724',
+      death: 'NA'
+    },
+    genres: 'Comedy, Drama',
     year: '2005'
   },,
   {
     title: 'National Treasure',
-    director: 'Jon Turtletaub',
-    genre: 'Action, Adventure, Mystery, Thriller',
+    director: {
+      name: 'Jon Turteltaub',
+      bio: 'what',
+      birth: '1822',
+      death: 'NA'
+    },
+    genres: 'Action, Adventure, Mystery, Thriller',
     year: '2004'
   },
   {
     title: 'Matchstick Men',
-    director: 'Ridley Scott',
-    genre: 'Comedy, Crime, Drama, Thriller',
+    director: {
+      name: 'Ridley Scott',
+      bio: 'yep',
+      birth: '1923',
+      death: 'NA'
+    },
+    genres: 'Comedy, Crime, Drama, Thriller',
     year: '2003'
   },
   {
     title: 'Wild at Heart',
-    director: 'David Lynch',
-    genre: 'Comedy, Crime, Drama, Thriller',
+    director: {
+      name: 'David Lynch',
+      bio: 'whoa',
+      birth: '231',
+      death: 'NA'
+    },
+    genres: 'Comedy, Crime, Drama, Thriller',
     year: '1990'
   },
   {
     title: 'Raising Arizona',
-    director: 'Joel Coen, Ethan Coen',
-    genre: 'Comedy, Crime',
+    director: {
+      name: 'Joel Coen, Ethan Coen',
+      bio: 'two people!',
+      birth: '2020',
+      death: 'NA'
+    },
+    genres: 'Comedy, Crime',
     year: '1987'
   }
 ];
