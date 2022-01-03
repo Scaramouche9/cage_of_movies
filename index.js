@@ -71,6 +71,9 @@ let topMovies = [
   }
 ];
 
+// serves documentation.html from "public" folder
+app.use(express.static('public'));
+
 // GET requests
 app.get('/movies', (req, res) => {
   res.json(topMovies);
@@ -80,8 +83,6 @@ app.get('/', (req, res) => {
   res.send('Find your favorite Nicolas Cage movies here!');
 });
 
-// serves documentation.html from "public" folder
-app.use(express.static('public'));
 
 // handles errors
 app.use((err, req, res, next) => {
