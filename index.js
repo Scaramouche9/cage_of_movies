@@ -131,14 +131,68 @@ let topMovies = [
 app.use(express.static('public'));
 
 // GET requests
-app.get('/movies', (req, res) => {
-  res.json(topMovies);
-});
 
+// Welcome message
 app.get('/', (req, res) => {
   res.send('Find your favorite Nicolas Cage movies here!');
 });
 
+// Returns list of ALL movies to the user
+app.get('/movies', (req, res) => {
+  res.json(topMovies);
+});
+
+// Returns data about specific movies
+app.get('/movies/:title', (req, res) => {
+  res.status(200).json(topMovies.find((movie) => {
+    return movie.title === req.params.title
+  }));
+});
+
+// Returns data about genre by name
+app.get('/genres/:genre', (req, res) => {
+  res.status(200).json(topMovies.find((genre) => {
+    return genre.genres === req.params.genre;
+  }));
+});
+
+// Return data about a director by name 200 but wrong return
+app.get('/directors/:directorName', (req, res) => {
+  res.status(200).json(topMovies.filter((director) => {
+    return director.director.name === req.params.directorName;
+  }));
+});
+
+// POST requests
+
+// Allow users to register
+app.post('/users/:newUser', (req, res) => {
+  res.send('You\'ve successfully registered, welcome!')
+});
+
+// Allow users to add a movie to their list of favorites, showing a text that a movie has been added 404
+app.post('/favorite/:newFavorite', (req, res) => {
+  res.send('You\'ve added a new movie to your favorites!')
+});
+
+// PUT requests
+
+// Allow users to update their info
+app.put('/users/:username', (req, res) => {
+  res.send('You\'ve successfully updated your information!');
+});
+
+// DELETE requests
+
+// Allow users to remove a movie from their favorites, showing a text that a movie has been removed
+app.delete('/favorite/:deleteFavorite', (req, res) => {
+  res.send('You\'ve successfully deleted a movie from your favorites');
+});
+
+// Allow existing users to deregister, showing a text that a user email has been removed
+app.delete('/users/:username', (req, res) => {
+  res.send('User account deleted, sorry to see you go!')
+});
 
 // handles errors
 app.use((err, req, res, next) => {
