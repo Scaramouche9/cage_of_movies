@@ -41,7 +41,7 @@
             <td>A JSON object holding data about all the movies</td>
           </tr>
           <tr>
-            <td>Return data (description, genre, director, image URL, year) about a single movie by title to the user</td>
+            <td>Return data (title, director info, genre, year) about a single movie by title to the user</td>
             <td>/movies/:title</td>
             <td>GET</td>
             <td>:title</td>
@@ -50,48 +50,56 @@
               A JSON object holding data about the selected movie, structured like:
               {
                 title: 'National Treasure'
-                genre: ['action', 'adventure', 'mystery', 'thriller']
-                director: 'Jon Turteltaub'
-                image URL: 'placholder.com/200'
+                director: {
+                  name: 'Jon Turteltaub',
+                  bio: 'bio',
+                  birth: '1920',
+                  death: 'NA'
+                },
+                genres: 'Action, Adventure, Mystery, Thriller',
                 year: '2004'
               }
             </td>
           </tr>
           <tr>
             <td>Return data about a genre by name</td>
-            <td>/movies/genre/:genre</td>
+            <td>/genres/:genre</td>
             <td>GET</td>
             <td>:genre</td>
             <td>None</td>
             <td>
-              A JSON object holding data about the selected movie's genres, structured like:
+              A JSON object holding data about movies in the selected genre, structured like:
               {
                 title: 'National Treasue',
-                director: 'Jon Turteltaub',
+                director: {
+                  name: 'Jon Turteltaub',
+                  bio: 'bio',
+                  birth: '1776',
+                  death: 'NA'
+                },
                 genres: 'Action, Adventure, Mystery, Thriller'
                 year: '2004'
-              }
-              {
-                title: 'The Weather Man',
-                director: 'Gore Verbinski',
-                genres: 'Comedy, Drama',
-                year: 2005
               }
             </td>
           </tr>
           <tr>
-            <td>Return data about a director (bio, brith year, death year) by name</td>
-            <td>/movies/director/:director</td>
+            <td>Return data about movies by the selected director (bio, brith year, death year) by name</td>
+            <td>/directors/:directorName</td>
             <td>GET</td>
-            <td>:director</td>
+            <td>:directorName</td>
             <td>None</td>
             <td>
               A JSON object holding data about the selected director, structured like:
               {
-                name: 'Jon Turteltaub'
-                bio: 'Here are some facts about Jon Turteltaub.'
-                birth year: '1963'
-                death year: 'NA'
+                title: 'National Treasue',
+                director: {
+                  name: 'Jon Turteltaub',
+                  bio: 'bio',
+                  birth: '1776',
+                  death: 'NA'
+                },
+                genres: 'Action, Adventure, Mystery, Thriller'
+                year: '2004'
               }
             </td>
           </tr>
@@ -131,9 +139,9 @@
           </tr>
           <tr>
             <td>Allow users to add a movie to their list of favorites, showing text that a movie has been added</td>
-            <td>users/favorites/:title</td>
+            <td>/favorite/:newFavorite</td>
             <td>POST</td>
-            <td>:title</td>
+            <td>:newFavorite</td>
             <td>None</td>
             <td>A text string:
               {
@@ -143,9 +151,9 @@
           </tr>
           <tr>
             <td>Allow users to remove a movie from their list of favorites, showing a text that a movie has been removed</td>
-            <td>users/favorites/:title</td>
+            <td>/favorite/:deleteFavorite</td>
             <td>DELETE</td>
-            <td>:title</td>
+            <td>:deleteFavorite</td>
             <td>None</td>
             <td>
               A text string:
