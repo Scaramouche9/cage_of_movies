@@ -1,12 +1,18 @@
 // importing express and morgan
 const express = require('express');
-  const morgan = require('morgan');
-  
+  morgan = require('morgan');
+  bodyParser = require('body-parser');
+  uuid = require('uuid');
+
 // defines variable to call on express
 const app = express();
 
 // invokes use of morgan middleware to log url requests
 app.use(morgan('common'));
+app.use(express.json());
+
+// invokes use of bodyParser
+app.use(bodyParser.json());
 
 let topMovies = [
   {
