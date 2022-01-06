@@ -1,8 +1,8 @@
 // importing express and morgan
 const express = require('express');
-  morgan = require('morgan');
-  bodyParser = require('body-parser');
-  uuid = require('uuid');
+morgan = require('morgan');
+bodyParser = require('body-parser');
+uuid = require('uuid');
 
 // defines variable to call on express
 const app = express();
@@ -28,7 +28,7 @@ let topMovies = [
   },
   {
     title: 'Willy\s Wonderland',
-    director:   {
+    director: {
       name: 'Kevin Lewis',
       bio: 'This is also a bio',
       birth: '1980',
@@ -39,7 +39,7 @@ let topMovies = [
   },
   {
     title: 'Prisoners of the Ghostland',
-    director:   {
+    director: {
       name: 'Sion Sono',
       bio: 'This too, is a bio',
       birth: '1930',
