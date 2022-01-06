@@ -56,7 +56,10 @@
                   &emsp;&emsp;birth: '1920', <br>
                   &emsp;&emsp;death: 'NA' <br>
                   &emsp;}, <br>
-                  &emsp;genres: 'Action, Adventure, Mystery, Thriller', <br>
+                  &emsp;genre: { <br>
+                    &emsp;name: 'Adventure', <br>
+                    &emsp;description: 'adventure yay exploring' <br>
+                    &emsp;} <br>
                   &emsp;year: '2004' <br>
               }
             </td>
@@ -70,20 +73,15 @@
             <td>
               A JSON object holding data about movies in the selected genre, structured like: <br>
               { <br>
-                &emsp;title: 'National Treasure' <br>
-                &emsp;director: { <br>
-                  &emsp;&emsp;name: 'Jon Turteltaub', <br>
-                  &emsp;&emsp;bio: 'bio', <br>
-                  &emsp;&emsp;birth: '1920', <br>
-                  &emsp;&emsp;death: 'NA' <br>
-                  &emsp;}, <br>
-                  &emsp;genres: 'Action, Adventure, Mystery, Thriller', <br>
-                  &emsp;year: '2004' <br>
+                &emsp;genre: { <br>
+                  &emsp;name: 'Adventure', <br>
+                  &emsp;description: 'adventure yay exploring' <br>
+                  &emsp;} <br>
               }
             </td>
           </tr>
           <tr>
-            <td>Return data about movies by the selected director (bio, brith year, death year) by name</td>
+            <td>Return data about a selected director (bio, birth year, death year) by name</td>
             <td>/directors/:directorName</td>
             <td>GET</td>
             <td>:directorName</td>
@@ -91,15 +89,12 @@
             <td>
               A JSON object holding data about the selected director, structured like: <br>
               { <br>
-                &emsp;title: 'National Treasure' <br>
                 &emsp;director: { <br>
                   &emsp;&emsp;name: 'Jon Turteltaub', <br>
                   &emsp;&emsp;bio: 'bio', <br>
                   &emsp;&emsp;birth: '1920', <br>
                   &emsp;&emsp;death: 'NA' <br>
                   &emsp;}, <br>
-                  &emsp;genres: 'Action, Adventure, Mystery, Thriller', <br>
-                  &emsp;year: '2004' <br>
               }
             </td>
           </tr>
