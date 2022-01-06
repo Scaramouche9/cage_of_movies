@@ -23,7 +23,7 @@ let topMovies = [
       birth: '1900',
       death: 'NA'
     },
-    genres: 'Drama, Thriller',
+    genres: 'Drama',
     year: '2021'
   },
   {
@@ -34,7 +34,7 @@ let topMovies = [
       birth: '1980',
       death: 'NA'
     },
-    genres: 'Action, Comedy, Horror, Thriller',
+    genres: 'Action',
     year: '2021'
   },
   {
@@ -45,7 +45,7 @@ let topMovies = [
       birth: '1930',
       death: 'NA'
     },
-    genres: 'Action, Sci-Fi, Thriller',
+    genres: 'Action',
     year: '2021'
   },
   {
@@ -56,7 +56,7 @@ let topMovies = [
       birth: '1919',
       death: 'NA'
     },
-    genres: 'Action, Comedy, Crime',
+    genres: 'Action',
     year: '2010'
   },
   {
@@ -67,7 +67,7 @@ let topMovies = [
       birth: '1680',
       death: 'NA'
     },
-    genres: 'Horror, Mystery, Thriller',
+    genres: 'Horror',
     year: '2016'
   },
   {
@@ -78,7 +78,7 @@ let topMovies = [
       birth: '1724',
       death: 'NA'
     },
-    genres: 'Comedy, Drama',
+    genres: 'Comedy',
     year: '2005'
   },
   {
@@ -89,7 +89,7 @@ let topMovies = [
       birth: '1822',
       death: 'NA'
     },
-    genres: 'Action, Adventure, Mystery, Thriller',
+    genres: 'Adventure',
     year: '2004'
   },
   {
@@ -100,7 +100,7 @@ let topMovies = [
       birth: '1923',
       death: 'NA'
     },
-    genres: 'Comedy, Crime, Drama, Thriller',
+    genres: 'Comedy',
     year: '2003'
   },
   {
@@ -111,7 +111,7 @@ let topMovies = [
       birth: '231',
       death: 'NA'
     },
-    genres: 'Comedy, Crime, Drama, Thriller',
+    genres: 'Comedy',
     year: '1990'
   },
   {
@@ -122,7 +122,7 @@ let topMovies = [
       birth: '2020',
       death: 'NA'
     },
-    genres: 'Comedy, Crime',
+    genres: 'Comedy',
     year: '1987'
   }
 ];
