@@ -1,15 +1,17 @@
-// importing express and morgan
+// importing express, morgan, bodyParser, mongoose
 const express = require('express');
-morgan = require('morgan');
-bodyParser = require('body-parser');
-uuid = require('uuid');
-
-// defines variable to call on express
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
 const app = express();
+const mongoose = require('mongoose');
+const Models = require('./models.js');
 
-// invokes use of morgan middleware to log url requests
-app.use(morgan('common'));
-app.use(express.json());
+const Movies = Models.Movie;
+const Users = Models.User;
+
+mongoose.connect('mongodb://localhost:27017/cage_of_movies', {
+  useNewUrlParser: true, useUnifiedTopology: true
+});
 
 // invokes use of bodyParser
 app.use(bodyParser.json());
