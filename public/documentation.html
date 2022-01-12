@@ -33,7 +33,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>Return a list of ALL movies to the user</td>
+            <td>Return a list of ALL movies</td>
             <td>/movies</td>
             <td>GET</td>
             <td>None</td>
@@ -41,7 +41,7 @@
             <td>A JSON object holding data about all the movies</td>
           </tr>
           <tr>
-            <td>Return data (title, director info, genre, year) about a single movie by title to the user</td>
+            <td>Return data (title, genre info, director info, description, year, rating, image, whether featured or not) about a single movie by title</td>
             <td>/movies/:title</td>
             <td>GET</td>
             <td>:title</td>
@@ -49,23 +49,29 @@
             <td>
               A JSON object holding data about the selected movie, structured like: <br>
               { <br>
-                &emsp;title: 'National Treasure' <br>
+                &emsp;genre: { <br>
+                  &emsp;name: 'Adventure', <br>
+                  &emsp;description: 'adventure yay exploring' <br>
+                  &emsp;} <br>
                 &emsp;director: { <br>
                   &emsp;&emsp;name: 'Jon Turteltaub', <br>
                   &emsp;&emsp;bio: 'bio', <br>
                   &emsp;&emsp;birth: '1920', <br>
                   &emsp;&emsp;death: 'NA' <br>
                   &emsp;}, <br>
-                  &emsp;genre: { <br>
-                    &emsp;name: 'Adventure', <br>
-                    &emsp;description: 'adventure yay exploring' <br>
-                    &emsp;} <br>
-                  &emsp;year: '2004' <br>
+                &emsp;actors: [] <br>
+                &emsp;_id: '61d5fac089f7aab38f63dd36' <br>
+                &emsp;title: 'National Treasure' <br>
+                &emsp;description: 'Here's a description!' <br>
+                &emsp;year: '2004' <br>
+                &emsp;rating: 'PG' <br>
+                &emsp;image path: 'national-treasure.png' <br>
+                &emsp;featured: 'false' <br>
               }
             </td>
           </tr>
           <tr>
-            <td>Return data about a genre by name</td>
+            <td>Return data (name, description) about a genre by name</td>
             <td>/genres/:genre</td>
             <td>GET</td>
             <td>:genre</td>
@@ -75,13 +81,13 @@
               { <br>
                 &emsp;genre: { <br>
                   &emsp;name: 'Adventure', <br>
-                  &emsp;description: 'adventure yay exploring' <br>
+                  &emsp;description: 'This is a genre!' <br>
                   &emsp;} <br>
               }
             </td>
           </tr>
           <tr>
-            <td>Return data about a selected director (bio, birth year, death year) by name</td>
+            <td>Return data about a selected director (bio, birth date, death date) by name</td>
             <td>/directors/:directorName</td>
             <td>GET</td>
             <td>:directorName</td>
@@ -91,31 +97,68 @@
               { <br>
                 &emsp;director: { <br>
                   &emsp;&emsp;name: 'Jon Turteltaub', <br>
-                  &emsp;&emsp;bio: 'bio', <br>
-                  &emsp;&emsp;birth: '1920', <br>
-                  &emsp;&emsp;death: 'NA' <br>
+                  &emsp;&emsp;bio: 'Here is a bio', <br>
+                  &emsp;&emsp;birthdate: '1920', <br>
+                  &emsp;&emsp;deathdate: 'NA' <br>
                   &emsp;}, <br>
               }
             </td>
+            </tr>
+
+            <tr>
+              <td>Return list of ALL users</td>
+              <td>/users</td>
+              <td>GET</td>
+              <td>None</td>
+              <td>None</td>
+              <td>A JSON object holding data about all the users</td>
+            </tr>
+            <tr>
+              <td>Return data (name, password, email, birthday, favorites) about a single user by username</td>
+              <td>/users/:username</td>
+              <td>GET</td>
+              <td>:directorName</td>
+              <td>None</td>
+              <td>
+                A JSON object holding data about the selected user, structured like: <br>
+                { <br>
+                    &emsp;user: { <br>
+                      &emsp;&emsp;_id: '61d6094d89f7aab38f63dd3d', <br>
+                      &emsp;&emsp;name: 'Robin Feld', <br>
+                      &emsp;&emsp;username: 'pigislyf', <br>
+                      &emsp;&emsp;password: 'Truffl3s', <br>
+                      &emsp;&emsp;email: 'rfeld@hotmail.com', <br>
+                      &emsp;&emsp;birthday: '1953-04-17' <br>
+                      &emsp;&emsp;favorites: [ MovieIDs ] <br>
+                      &emsp;}, <br>
+                  }
+                </td>
           </tr>
           <tr>
             <td>Allow users to register</td>
-            <td>/users/:newUser</td>
+            <td>/users</td>
             <td>POST</td>
-            <td>:newUser</td>
+            <td>None</td>
             <td>
               A JSON object holding data about the user, structured like: <br>
               { <br>
+                &emsp;name: "Ben Gates" <br>
                 &emsp;username: "BenGates" <br>
                 &emsp;email: "bgates@gmail.com" <br>
-                &emsp;password: "Trea$ureHunter64" <br>
-                &emsp;Date of Birth: 01/07/1964 <br>
+                &emsp;password: "trea$ureHunter64" <br>
+                &emsp;birthday: 1964-01-07 <br>
               }
             </td>
             <td>
-              A text string:
-              {
-                "You've successfully registered, welcome!"
+              A JSON object holding the user data, structured like:
+              { <br>
+                &emsp;name: "Ben Gates" <br>
+                &emsp;username: "BenGates" <br>
+                &emsp;email: "bgates@gmail.com" <br>
+                &emsp;password: "trea$ureHunter64" <br>
+                &emsp;birthday: 1964-01-07 <br>
+                &emsp;favorites: [] <br>
+                &emsp;_id: "61d904b69040756f3dea7890" <br>
               }
             </td>
           </tr>
@@ -124,43 +167,58 @@
             <td>/users/:username</td>
             <td>PUT</td>
             <td>:username</td>
-            <td>None</td>
             <td>
-              A text string:
-              {
-                "You've successfully updated your information!"
-              }
-            </td>
-          </tr>
-          <tr>
-            <td>Allow users to add a movie to their list of favorites, showing text that a movie has been added</td>
-            <td>/favorite/:newFavorite</td>
-            <td>POST</td>
-            <td>:newFavorite</td>
-            <td>
-              A JSON object holding a movie title, structured like: <br>
+              A JSON object holding updated data about the user, structured like: <br>
               { <br>
-                &emsp;'National Treasure' <br>
+                &emsp;password: "Trea$ureHunter64" <br>
               }
             </td>
-            <td>A text string:
-              {
-                "You've added a new movie to your favorites!"
-              } 
+            <td>
+              A JSON object holding the user data with updates, structured like:
+              { <br>
+                &emsp;name: "Ben Gates" <br>
+                &emsp;username: "BenGates" <br>
+                &emsp;email: "bgates@gmail.com" <br>
+                &emsp;password: "Trea$ureHunter64" <br>
+                &emsp;birthday: 1964-01-07 <br>
+                &emsp;favorites: [] <br>
+                &emsp;_id: "61d904b69040756f3dea7890" <br>
+              }
             </td>
           </tr>
           <tr>
-            <td>Allow users to remove a movie from their list of favorites, showing a text that a movie has been removed</td>
-            <td>/favorite/:deleteFavorite</td>
-            <td>DELETE</td>
-            <td>:deleteFavorite</td>
+            <td>Allow users to add a movie to their list of favorites</td>
+            <td>/users/:username/movies/:movieID</td>
+            <td>POST</td>
+            <td>:username, :movieID</td>
             <td>None</td>
-            <td>
-              A text string:
-              {
-                "You've successfully deleted a movie from your favorites"
+            <td>A JSON object holding the user data with new favorite, structured like:
+              { <br>
+                &emsp;_id: "61dca37fdec79b58ac65240d" <br>
+                &emsp;username: "sarah" <br>
+                &emsp;password: "ImSarah" <br>
+                &emsp;email: "bsarah@gmail.com" <br>
+                &emsp;favorites: [
+                  "61d5fac089f7aab38f63dd36"
+                  ], <br>
               }
-              </td>
+            </td>
+          </tr>
+          <tr>
+            <td>Allow users to remove a movie from their list of favorites</td>
+            <td>/users/:username/movies/:MovieID</td>
+            <td>DELETE</td>
+            <td>:username, MovieID</td>
+            <td>None</td>
+            <td>A JSON object holding the user data with favorite deleted, structured like:
+              { <br>
+                &emsp;_id: "61dca37fdec79b58ac65240d" <br>
+                &emsp;username: "sarah" <br>
+                &emsp;password: "ImSarah" <br>
+                &emsp;email: "bsarah@gmail.com" <br>
+                &emsp;favorites: [], <br>
+              }
+            </td>
           </tr>
           <tr>
             <td>Allow existing users to deregister, showing a text that a user email has been removed</td>
@@ -171,7 +229,7 @@
             <td>
               A text string:
               {
-                "User account deleted, sorry to see you go!"
+                "nicCage was deleted"
               }
             </td>
           </tr>
