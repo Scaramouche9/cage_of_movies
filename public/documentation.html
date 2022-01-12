@@ -31,6 +31,7 @@
             <th>Response Body Data Format</th>
           </tr>
         </thead>
+
         <tbody>
           <tr>
             <td>Return a list of ALL movies</td>
@@ -40,6 +41,7 @@
             <td>None</td>
             <td>A JSON object holding data about all the movies</td>
           </tr>
+
           <tr>
             <td>Return data (title, genre info, director info, description, year, rating, image, whether featured or not) about a single movie by title</td>
             <td>/movies/:title</td>
@@ -70,6 +72,7 @@
               }
             </td>
           </tr>
+
           <tr>
             <td>Return data (name, description) about a genre by name</td>
             <td>/genres/:genre</td>
@@ -86,6 +89,7 @@
               }
             </td>
           </tr>
+
           <tr>
             <td>Return data about a selected director (bio, birth date, death date) by name</td>
             <td>/directors/:directorName</td>
@@ -134,6 +138,7 @@
                   }
                 </td>
           </tr>
+
           <tr>
             <td>Allow users to register</td>
             <td>/users</td>
@@ -162,6 +167,7 @@
               }
             </td>
           </tr>
+
           <tr>
             <td>Allow users to update their info</td>
             <td>/users/:username</td>
@@ -186,6 +192,7 @@
               }
             </td>
           </tr>
+
           <tr>
             <td>Allow users to add a movie to their list of favorites</td>
             <td>/users/:username/movies/:movieID</td>
@@ -204,6 +211,7 @@
               }
             </td>
           </tr>
+          
           <tr>
             <td>Allow users to remove a movie from their list of favorites</td>
             <td>/users/:username/movies/:MovieID</td>
