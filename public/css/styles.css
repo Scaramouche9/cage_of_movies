@@ -11,5 +11,29 @@ th {
 td {
   border-bottom: solid;
   border-right: solid;
+  padding: 1%;
+}
+
+#column-one {
+  width: 15%;
+}
+
+#column-two {
   width: 20%;
+}
+
+#column-three {
+  width: 10%;
+}
+
+#column-four {
+  width: 10%;
+}
+
+#column-five {
+  width: 20%;
+}
+
+#column-six {
+  width: 25%;
 }
