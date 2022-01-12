@@ -17,8 +17,6 @@ mongoose.connect('mongodb://localhost:27017/cage_of_movies', {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// DO I NEED NOW?
-const res = require('express/lib/response');
 app.use(express.json());
 
 // serves documentation.html from "public" folder
