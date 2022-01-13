@@ -29,6 +29,8 @@ app.use(express.json());
 // serves documentation.html from "public" folder
 app.use(express.static('public'));
 
+// QUERIES
+
 // Welcome message
 app.get('/', (req, res) => {
   res.send('Find your favorite Nicolas Cage movies here!');
