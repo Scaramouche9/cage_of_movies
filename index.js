@@ -17,6 +17,9 @@ mongoose.connect('mongodb://localhost:27017/cage_of_movies', {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// import auth.js file
+let auth = require('./auth')(app);
+
 // requires Passport module and imports the "passport.js" file
 const passport = require('passport');
 require('./passport');
