@@ -4,7 +4,7 @@
   "description": "Look up Nicolas Cage movies and choose your favorites to add to your profile!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
