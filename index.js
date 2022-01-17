@@ -10,9 +10,17 @@ const { check, validationResult } = require('express-validator');
 const Movies = Models.Movie;
 const Users = Models.User;
 
+// Connect API to online database via Mongo DB Atlas
+mongoose.connect('process.enc.connectionURI', {
+  useNewUrlParser: true, useUnifiedTopology: true
+});
+
+// Connect API to local database
+/*
 mongoose.connect('mongodb://localhost:27017/cage_of_movies', {
   useNewUrlParser: true, useUnifiedTopology: true
 });
+*/
 
 // invokes use of bodyParser
 app.use(bodyParser.json());
