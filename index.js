@@ -29,8 +29,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // integrates CORS within application
 const cors = require('cors');
 
-// allows only certain origins to have access, via CORS
+/*
+ allows only certain origins to have access, via CORS
 let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+*/
 
 app.use(cors({
   origin: (origin, callback) => {
