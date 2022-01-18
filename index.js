@@ -11,7 +11,8 @@ const Movies = Models.Movie;
 const Users = Models.User;
 
 // Connect API to online database via Mongo DB Atlas
-mongoose.connect(process.env.connectionURI, {
+mongoose.connect(
+  process.env.connectionURI, {
   useNewUrlParser: true, useUnifiedTopology: true
 });
 
